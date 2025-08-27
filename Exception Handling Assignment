@@ -1,0 +1,21 @@
+def read_file():
+    try:
+        # Ask the user for the filename
+        filename = input("Enter the filename to read: ")
+
+        # Try to open and read the file
+        with open(filename, "r") as file:
+            content = file.read()
+            print("\nFile content:\n")
+            print(content)
+
+    except FileNotFoundError:
+        print("Error: The file does not exist.")
+    except PermissionError:
+        print("Error: You don't have permission to read this file.")
+    except Exception as e:
+        print("An unexpected error occurred:", e)
+
+
+# Run the function
+read_file()
